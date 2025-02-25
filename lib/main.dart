@@ -1,41 +1,68 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiImagen());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiImagen extends StatelessWidget {
+  const MiImagen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Mis Imagenes",
+            style: TextStyle(
+              fontSize: 25,
+              fontStyle: FontStyle.italic,
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor: Colors.deepPurple,
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Centra verticalmente
+            children: <Widget>[
+              Text(
+                'Jesu Adrian Esquivel Martinez Mat:22308051281176',
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff0b385e),
+                ),
+              ),
+              Image.network(
+                'https://raw.githubusercontent.com/Jesus-Esquivel/Imagenes-para-APP-flutter-6J/refs/heads/main/habitacion1.jpg',
+                width: 200, // Ajusta el ancho según sea necesario
+                height: 200, // Ajusta la altura según sea necesario
+              ),
+              const SizedBox(height: 20), // Espacio entre las imágenes
+              const Text(
+                'Cama normal en github',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff0b385e),
+                ),
+              ),
+              Image.network(
+                'https://raw.githubusercontent.com/Jesus-Esquivel/Imagenes-para-APP-flutter-6J/refs/heads/main/habitacion2.jpg',
+                width: 200,
+                height: 200,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Cama Suite en GitHub',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff0b385e),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
